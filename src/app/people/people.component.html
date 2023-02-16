@@ -1,0 +1,6 @@
+<div class="row">
+  <h1 class="text-center">Top Actors</h1>
+  <div *ngFor="let item of trendingPeople" class="col-md-2">
+    <app-mediaitem [item]="item"></app-mediaitem>
+  </div>
+</div>

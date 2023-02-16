@@ -1,0 +1,32 @@
+<div
+  *ngIf="favouriteList.length == 0"
+  class="text-center h1"
+  style="height: 80vh"
+>
+  Your Favourite List is Empty
+</div>
+<div *ngFor="let item of favouriteList">
+  <div class="row my-3">
+    <div class="col-md-3">
+      <img
+        *ngIf="item.poster_path"
+        class="w-100"
+        [src]="'https://image.tmdb.org/t/p/w500/' + item.poster_path"
+      />
+      <img
+        *ngIf="item.profile_path"
+        class="w-100"
+        [src]="'https://image.tmdb.org/t/p/w500/' + item.profile_path"
+      />
+    </div>
+    <div class="col-md-9 d-flex align-items-center">
+      <div>
+        <h3 class="my-2">{{ item.title }} {{ item.name }}</h3>
+        <p class="py-2 text-muted">{{ item.overview }}</p>
+        <h6 *ngIf="item.vote_count">Vote Count: {{ item.vote_count }}</h6>
+        <h6 *ngIf="item.vote_average">Vote Average: {{ item.vote_average }}</h6>
+        <button class="btn btn-danger" (click)="Remove(item)">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>

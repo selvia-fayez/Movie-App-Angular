@@ -1,0 +1,61 @@
+<h1 class="text-center">Welcome</h1>
+<div class="row mt-5 mb-3">
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let slide of trendingMovies">
+      <ng-template carouselSlide>
+        <img [src]="'http://image.tmdb.org/t/p/w500/' + slide.poster_path" />
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</div>
+
+<div class="row">
+  <div class="col-md-4 d-flex align-items-center">
+    <div>
+      <div class="brdr w-25 mb-3"></div>
+      <h2 class="h5">
+        Trending Movies<br />
+        To Watch Right Now
+      </h2>
+      <p class="text-muted py-2">Most Watched movies by the day</p>
+      <div class="brdr w-100 mb-3"></div>
+    </div>
+  </div>
+  <div *ngFor="let item of trendingMovies" class="col-md-2">
+    <app-mediaitem [item]="item"></app-mediaitem>
+  </div>
+</div>
+
+<div class="row py-5">
+  <div class="col-md-4 d-flex align-items-center">
+    <div>
+      <div class="brdr w-25 mb-3"></div>
+      <h2 class="h5">
+        Trending Tv<br />
+        To Watch Right Now
+      </h2>
+      <p class="text-muted py-2">Most Watched Tv by the day</p>
+      <div class="brdr w-100 mb-3"></div>
+    </div>
+  </div>
+  <div *ngFor="let item of trendingTv" class="col-md-2">
+    <app-mediaitem [item]="item"></app-mediaitem>
+  </div>
+</div>
+
+<div class="row py-5">
+  <div class="col-md-4 d-flex align-items-center">
+    <div>
+      <div class="brdr w-25 mb-3"></div>
+      <h2 class="h5">
+        Trending People<br />
+        To Watch Right Now
+      </h2>
+      <p class="text-muted py-2">Most Watched People by the day</p>
+      <div class="brdr w-100 mb-3"></div>
+    </div>
+  </div>
+  <div *ngFor="let item of trendingPeople" class="col-md-2">
+    <app-mediaitem [item]="item"></app-mediaitem>
+  </div>
+</div>

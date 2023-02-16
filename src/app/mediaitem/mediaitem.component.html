@@ -1,0 +1,21 @@
+<div class="item position-relative my-3">
+  <a [routerLink]="['/moviedetails', item.id, item.media_type]">
+    <img
+      *ngIf="item.poster_path"
+      class="w-100"
+      [src]="'https://image.tmdb.org/t/p/w500/' + item.poster_path"
+    />
+    <img
+      *ngIf="item.profile_path"
+      class="w-100"
+      [src]="'https://image.tmdb.org/t/p/w500/' + item.profile_path"
+    />
+    <h3 class="h6 my-2">{{ item.title }} {{ item.name }}</h3>
+    <div
+      *ngIf="item.vote_average"
+      class="vote position-absolute p-2 top-0 end-0 text-white"
+    >
+      {{ item.vote_average.toFixed(1) }}
+    </div>
+  </a>
+</div>
