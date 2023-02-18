@@ -37,6 +37,11 @@
                         *ngIf="loginForm.controls['email'].hasError('required')"
                         >Your Email is Required</span
                       >
+                      <span
+                        *ngIf="loginForm.controls['email'].hasError('pattern')"
+                        >Email must match pattern like :
+                        "example1@gmail.com"</span
+                      >
                     </div>
                   </div>
                 </div>

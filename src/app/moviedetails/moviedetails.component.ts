@@ -35,6 +35,6 @@ export class MoviedetailsComponent implements OnInit {
   }
   Add(item: any) {
     this._MovieService.favouriteList.push(item);
-    alert('Added to Favourite');
+    //alert('Added to Favourite');
   }
 }
