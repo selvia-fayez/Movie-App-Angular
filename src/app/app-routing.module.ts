@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutUsComponent } from './about-us/about-us.component';
 import { CustomerrorComponent } from './customerror/customerror.component';
-import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
@@ -17,7 +15,6 @@ import { FavouritesComponent } from './favourites/favourites.component';
 const routes: Routes = [
   { path: '', redirectTo: 'Home', pathMatch: 'full' },
   { path: 'Home', canActivate: [AuthGuard], component: HomeComponent },
-  { path: 'AboutUs', canActivate: [AuthGuard], component: AboutUsComponent },
   { path: 'movies', canActivate: [AuthGuard], component: MoviesComponent },
   {
     path: 'moviedetails/:id/:media_type',
