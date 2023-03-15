@@ -25,6 +25,7 @@
         *ngIf="itemDetails.vote_count"
         class="btn btn-success"
         (click)="Add(itemDetails)"
+        [routerLink]="['/favourites']"
         data-bs-toggle="modal"
         data-bs-target="#fav"
       >
